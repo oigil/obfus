@@ -1,0 +1,11 @@
+# Webstorm IDE files
+.idea
+
+# mac osx DS_Store file
+.DS_Store
+
+# node modules and libs
+node_modules
+
+# error log by node.js
+npm.error.log

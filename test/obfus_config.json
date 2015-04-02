@@ -1,0 +1,10 @@
+{
+	"separator": "\\_\\_(.+?)\\_\\_",
+	"source": [
+		"source/"
+	],
+	"obfuscationDictionary": {},
+	"obfuscationDictionaryLog": "obfus_dictionary.log",
+	"source_postfix": "_old",
+	"target_postfix": ""
+}

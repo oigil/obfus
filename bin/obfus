@@ -1,0 +1,94 @@
+#!/usr/bin/env node
+
+process.title = 'obfus';
+
+var path = require('path');
+var minimist = require('minimist');
+var pkg = require('../package.json');
+var obfus = require('../index.js');
+var colors = require('../lib/colors');
+
+function maybeWithColor(color, text) {
+  if (!process.stderr.isTTY) { return text; }
+
+  return colors[color].call(colors, text);
+}
+
+process.on('uncaughtException', function (err) {
+
+
+   process.stderr.write('\n');
+
+
+  if (argv === undefined) {
+    process.stderr.write(err.stack + '\n\n');
+  }
+
+  process.stderr.write(maybeWithColor('red', err.name + ': ' + err.message) + '\n');
+  process.exit(1);
+
+});
+
+var usage = [
+  'Usage: obfus <config-json-path>',
+  '',
+  'json-path:  Path to the JSON Specification file',
+  '',
+  'Json example:',
+  '    {',
+  '        "separator": "\\_\\_(.+?)\\_\\_"',
+  '        "source": [',
+  '                "public/js", //If a directory is defined, it explorers all the sub-directories and files.',
+  '                "public/css",',
+  '                "public/index.html"',
+  '        ]',
+  '        "obfuscationDictionary": {} //Dictionary object (Keep it blank)',
+  '        "obfuscationDictionaryLog": "obfus_dictionary.log" //Dictionary log\'s filename',
+  '        "source_postfix": "_old"',
+  '        "target_postfix": ""',
+  '    }',
+  '',
+  'Options:',
+  '',
+  '--help',
+  '    Display usage and exit',
+  '',
+  '--version',
+  '    Display version and exit',
+  '',
+
+].join('\n');
+
+var argv = minimist(process.argv.slice(2), {
+  boolean: ['help', 'version'],
+  alias: { h: 'help', v: 'version' }
+});
+
+if (argv.version) {
+  process.stderr.write('obfus v' + pkg.version + '\n');
+  process.exit(0);
+}
+
+if (argv.help || argv._.length < 1) {
+  process.stderr.write(usage + '\n');
+  process.exit(0);
+}
+
+if (argv._.length > 2) {
+  throw new Error('Too many arguments');
+}
+
+if (path.extname(argv._[0]) !== '.json') {
+  throw new Error('Input must have the .json file extension');
+}
+
+var configJson = argv._[0];
+
+obfus({ configJson: configJson });
+
+
+
+
+
+
+

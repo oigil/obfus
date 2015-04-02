@@ -1,0 +1,21 @@
+{
+  "name": "obfus",
+  "version": "1.0.9",
+  "license": "MIT",
+  "author": "Gyutae Jo <oigil.jo@gmail.com>",
+  "bin": "bin/obfus",
+  "main": "index.js",
+  "preferGlobal": true,
+  "description": "",
+  "dependencies": {
+    "minimist": "^1.1.1",
+    "node-dir": "^0.1.6",
+    "random-string": "^0.1.2",
+    "sync": "^0.2.5",
+    "underscore": "^1.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oigil/obfus.git"
+  }
+}
