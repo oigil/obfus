@@ -1,0 +1,2 @@
+# obfus
+obfuscate variable strings.
