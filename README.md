@@ -16,7 +16,7 @@ $ obfus <config-json-path>
 ## Config JSON Specification
 ```bash
     {
-        "separator": "\_\_(.+?)\_\_", // Be sure to use the unique separator to avoid unnecessary work.
+        "separator": "\\_\\_(.+?)\\_\\_", // Be sure to use the unique separator to avoid unnecessary work.
         "source": [
                 "public/css", //If a directory is defined, it explorers all the sub-directories and files.
                 "public/index.html"
@@ -68,7 +68,7 @@ test/
 #### - obfusConfig.json
 ```
     {
-        "separator": "\_\_(.+?)\_\_",
+        "separator": "\\_\\_(.+?)\\_\\_",
         "source": [
                 "public/css/",
                 "public/index.html"
