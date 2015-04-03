@@ -68,14 +68,14 @@ test/
 #### - obfusConfig.json
 ```
     {
-        "separator": "\_\_(.+?)\_\_"
+        "separator": "\_\_(.+?)\_\_",
         "source": [
                 "public/css/",
                 "public/index.html"
-        ]
-        "obfuscationDictionary": {}
+        ],
+        "obfuscationDictionary": {},
         "obfuscationDictionaryLog": "obfus_dictionary.log",
-        "source_postfix": "_old"
+        "source_postfix": "_old",
         "target_postfix": ""
     }
 ```
