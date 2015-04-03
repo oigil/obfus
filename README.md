@@ -16,20 +16,20 @@ $ obfus <config-json-path>
 ## Config JSON Specification
 ```bash
     {
-        "separator": "\_\_(.+?)\_\_"
+        "separator": "\_\_(.+?)\_\_", // Be sure to use the unique separator to avoid unnecessary work.
         "source": [
-                "public/css" //If a directory is defined, it explorers all the sub-directories and files,
+                "public/css", //If a directory is defined, it explorers all the sub-directories and files.
                 "public/index.html"
-        ]
-        "obfuscationDictionary": {} //Dictionary object to load. (Keep it blank)
-        "obfuscationDictionaryLog": "obfus_dictionary.log" //Dictionary log's filename. (Keep it blank if you don't need it.)
-        "source_postfix": "_old"
+        ],
+        "obfuscationDictionary": {}, //Dictionary object to load. (Keep it blank)
+        "obfuscationDictionaryLog": "obfus_dictionary.log", //Dictionary log's filename. (Keep it blank if you don't need it.)
+        "source_postfix": "_old",
         "target_postfix": ""
     }
 ```
 ----
 ## Quick Start
-### 1. Prefare source files.
+### 1. Prefare source files. (IDs and classNames must be wrapped using the separator.)
 ```bash
 test/
 +-- source
