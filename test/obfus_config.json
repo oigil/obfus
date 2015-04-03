@@ -1,7 +1,7 @@
 {
 	"separator": "\\_\\_(.+?)\\_\\_",
 	"source": [
-		"source/"
+		"public/"
 	],
 	"obfuscationDictionary": {},
 	"obfuscationDictionaryLog": "obfus_dictionary.log",

@@ -32,7 +32,7 @@ $ obfus <config-json-path>
 ### 1. Prefare source files. (IDs and classNames must be wrapped using the separator.)
 ```bash
 test/
-+-- source
++-- public
 |   +-- css
 |   |   +-- style.css
 |   +-- index.html
@@ -87,7 +87,7 @@ test$ obfus ./obfusConfig.json
 ### 3. Result
 ```bash
 test/
-+-- source
++-- public
 |   +-- css
 |   |   +-- style.css
 |   |   +-- style_old.css
